@@ -157,6 +157,17 @@ struct SidebarView: View
         { token in
             Text(token.name)
         }
+        .toolbar
+        {
+            ToolbarItem(placement: .automatic) {
+                Button {
+                    print("Would go to start page")
+                } label: {
+                    Label("Go to Start Page", systemImage: "house")
+                }
+
+            }
+        }
         .sheet(isPresented: $appState.isShowingMaintenanceSheet)
         {
             MaintenanceView(isShowingSheet: $appState.isShowingMaintenanceSheet)
